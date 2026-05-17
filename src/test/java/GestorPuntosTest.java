@@ -39,4 +39,13 @@ public class GestorPuntosTest {
         gestorPuntos.resetearPuntos("jugador1");
         assertTrue(gestorPuntos.obtenerPuntos("jugador1")==0);
     }
+
+    @Test
+    public void testAniadirPuntosAUsuarioInexistente() {
+        Map<String, Integer> jugadores = new HashMap<>();
+        GestorPuntos gestorPuntos = new GestorPuntos(jugadores);
+        gestorPuntos.sumarPuntos("jugador1", 10);
+        
+        assertTrue(gestorPuntos.obtenerPuntos("jugador1")==10);
+    }
 }
