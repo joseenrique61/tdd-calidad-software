@@ -14,4 +14,8 @@ public class GestorPuntos {
     public void sumarPuntos(String jugador, int puntos) {
         jugadores.put(jugador, jugadores.get(jugador) + puntos);
     }
+
+    public void restarPuntos(String jugador,int puntos){
+        jugadores.put(jugador, jugadores.get(jugador) - puntos);
+    }
 }

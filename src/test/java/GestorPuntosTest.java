@@ -13,4 +13,12 @@ public class GestorPuntosTest {
 
         assertTrue(gestorPuntos.getJugadores().get("jugador1") == 10);
     }
+    @Test
+    public void testRestarPuntos(){
+        Map<String, Integer> jugadores = new HashMap<>();
+        jugadores.put("jugador1", 10);
+        GestorPuntos gestorPuntos = new GestorPuntos(jugadores);
+        gestorPuntos.restarPuntos("jugador1",4);
+        assertTrue(gestorPuntos.getJugadores().get("jugador1")==6);
+    }
 }
