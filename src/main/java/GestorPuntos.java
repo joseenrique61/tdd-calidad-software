@@ -1,5 +1,5 @@
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class GestorPuntos {
     private Map<String, Integer> jugadores = new HashMap<>();
@@ -20,6 +20,10 @@ public class GestorPuntos {
     }
 
     public int obtenerPuntos(String jugador){
-    return jugadores.get(jugador);
+        return jugadores.get(jugador);
+    }
+
+    public void resetearPuntos(String jugador){
+        jugadores.put(jugador, 0);
     }
 }

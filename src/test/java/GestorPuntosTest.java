@@ -1,7 +1,8 @@
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
+
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import org.junit.jupiter.api.Test;
 
 public class GestorPuntosTest {
     @Test
@@ -30,4 +31,12 @@ public class GestorPuntosTest {
         assertTrue(gestorPuntos.obtenerPuntos("jugador1")==10);
     }
 
+    @Test
+    public void testResetearPuntos(){
+        Map<String, Integer> jugadores = new HashMap<>();
+        jugadores.put("jugador1", 10);
+        GestorPuntos gestorPuntos = new GestorPuntos(jugadores);
+        gestorPuntos.resetearPuntos("jugador1");
+        assertTrue(gestorPuntos.obtenerPuntos("jugador1")==0);
+    }
 }
